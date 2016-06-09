@@ -1,0 +1,43 @@
+<%= form_for(@destination) do |f| %>
+	<%= f.text_field :name %>
+	<%= f.text_field :description %>
+	<%= f.submit "Update", :class => "btn" %>
+<% end %>
+
+
+
+
+<%= image_tag @destination.image %>
+<h2><%= @destination.name %></h2>
+<p><%= @destination.description %></p>
+<%= link_to "Edit", edit_destination_path(@destination) %>
+
+
+<--For viewing each of the actors -->
+
+<% @actors.each do |actor| %>
+  <div class="actor col-xs-2">
+    <%= image_tag actor.image %>
+    <h3><%= actor.first_name + " " + actor.last_name %></h3>
+    <%= link_to "Learn more", actor_path(actor) %>
+  </div>
+<% end %>
+
+    <!-- Display an actor's info here -->
+    <div class="actor">
+      <%= image_tag @actor.image %>
+      <div class="info">
+        <h3 class="actor-name"><%= @actor.first_name + " " + @actor.last_name  %></h3>
+        <p class="actor-bio"><%= @actor.bio %></p>
+      </div>
+    </div>
+
+    <h2>Movies</h2>
+    <% @movies.each do |movie| %>
+    <div class="movie">
+      <%= image_tag movie.image %>
+      <h3 class="movie-title"><%= movie.title %></h3>
+      <p class="movie-release-year"><%= movie.release_year %></p>
+      <p class="movie-plot"><%= movie.plot %></p>
+    </div>
+    <% end %>

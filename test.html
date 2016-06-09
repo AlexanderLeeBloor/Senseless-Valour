@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JSON Object Creation in JavaScript</h2>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<script>
+var text = '{"name":"John Johnson","street":"Oslo West 16","phone":"555 1234567"}';
+
+var obj = JSON.parse(text);
+
+document.getElementById("demo").innerHTML =
+obj.name + "<br>" +
+obj.street + "<br>" +
+obj.phone;
+
+var equipment = '{"Equipment": [' + 
+	'{"EquipmentType": "bow", "EquipmentName": "Solaris", "Description": "This is Lathender\'s bow"},' +
+	'{"EquipmentType": "sword", "EquipmentName": "Numeril", "Description": "This is Arathorn\'s sword"},' +
+	'{"EquipmentType": "axe", "EquipmentName": "Treefell", "Description": "This is Paul Bunyan\'s axe"},' +
+	'{"EquipmentType": "hammer", "EquipmentName": "Judgement", "Description": "The sacred hammer of House Ironblood"} ]}';
+
+var arrEquipment = JSON.parse(equipment);
+
+document.getElementById("demo2").innerHTML =
+	arrEquipment.Equipment[0].EquipmentName + "<br>" +
+	arrEquipment.Equipment[1].EquipmentName + "<br>" +
+	arrEquipment.Equipment[2].EquipmentName + "<br>" +
+	arrEquipment.Equipment[3].EquipmentName;
+</script>
+
+</body>
+</html>
